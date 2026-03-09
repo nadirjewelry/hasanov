@@ -22,23 +22,8 @@
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet">
 
 	  <style>
-    @-webkit-keyframes shine {
-  0% {
-    background-position: 110% 0%, 0 0;
-  }
-  100% {
-    background-position: -10% 0%, 0 0;
-  }
-}
-@keyframes shine {
-  0% {
-    background-position: 110% 0%, 0 0;
-  }
-  100% {
-    background-position: -10% 0%, 0 0;
-  }
-}
-body {
+	    /* 1. Remove default margins and paddings from html and body */
+  html, body {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -49,6 +34,9 @@ body {
   background-size: cover;
   box-shadow: inset 0 0 10em rgba(0, 0, 0, 0.75);
   margin: 0;
+  padding: 0;  
+	        overflow: hidden; /* Hide any overflow, preventing scrollbars */
+	
 }
 h1 {
   position: relative;
@@ -371,10 +359,6 @@ span.i {
 	<div id="InfiniteScrollWrapper" class="infinite-scroll-wrapper">
 		<div id="InfiniteScroll" class="infinite-scroll-content">
 			<div class="infinite-scroll-items">
-					<div class="item-wrap">
-					<img src="files/j0.png"/>
-					<span class="text"></span>
-				</div>
 				<div class="item-wrap">
 					<img src="files/j1.png"/>
 					<span class="text"></span>
@@ -417,18 +401,6 @@ span.i {
 				</div>
 				<div class="item-wrap">
 					<img src="files/j11.png"/>
-					<span class="text"></span>
-				</div>
-				<div class="item-wrap">
-					<img src="files/j12.png"/>
-					<span class="text"></span>
-				</div>
-				<div class="item-wrap">
-					<img src="files/j13.png"/>
-					<span class="text"></span>
-				</div>
-				<div class="item-wrap">
-					<img src="files/j14.png"/>
 					<span class="text"></span>
 				</div>
 			</div>
