@@ -284,6 +284,20 @@ a:link, a:visited, a:hover, a:active {
     color: #006600; /* Back to Color 1 */
   }
 }
+	.animated-home {
+  font-size: 1em; /* Adjust size as needed */
+  animation: colorChange 2s infinite alternate;
+}
+
+@keyframes colorChange {
+  0% {
+    color: #006600; /* Color 1 (e.g., Blue) */
+  }
+  100% {
+    color: #e74c3c; /* Color 2 (e.g., Red) */
+  }
+}
+		  
 		  /* Link Style 2 */
 .link2 a {
     color: #silver;
@@ -339,7 +353,7 @@ new Vue({
 
   template: `
     <div class="contact-form-container">
-      <p class="subtitle">Nadir Hasanov &nbsp;&nbsp;&nbsp;<a href="https://www.instagram.com/nadirjewelry2026?igsh=MXF1b3hpcHBobmxtcA%3D%3D" class="instagram-icon"><i class="fab fa-instagram"></i></a><br><i class="fas fa-map-marked-alt map-icon-animated"></i>&nbsp;&nbsp;510 Brighton Beach Ave. Brooklyn NY 11235, USA.<br><i class="fas fa-headset"></i>&nbsp;&nbsp;+1 347 2613581<br><i class="fas fa-envelope-open-text animated-icon"></i>&nbsp;&nbsp;<a href="mailto:nadirjewelry@mail.com"><font face="Source Sans Pro" color="#7C6310">nadirjewelry@mail.com</font></a><br>CONTACT US / or back to <a href="https://nhjeweler.com/" title="HOME"><font face="Source Sans Pro" color="#006600">Homepage</a></font></p>
+      <p class="subtitle">Nadir Hasanov &nbsp;&nbsp;&nbsp;<a href="https://www.instagram.com/nadirjewelry2026?igsh=MXF1b3hpcHBobmxtcA%3D%3D" class="instagram-icon"><i class="fab fa-instagram"></i></a><br><i class="fas fa-map-marked-alt map-icon-animated"></i>&nbsp;&nbsp;510 Brighton Beach Ave. Brooklyn NY 11235, USA.<br><i class="fas fa-headset"></i>&nbsp;&nbsp;+1 347 2613581<br><i class="fas fa-envelope-open-text animated-icon"></i>&nbsp;&nbsp;<a href="mailto:nadirjewelry@mail.com"><font face="Source Sans Pro" color="#7C6310">nadirjewelry@mail.com</font></a><br>CONTACT US / or back to <a href="https://nhjeweler.com/" title="HOME"><font face="Source Sans Pro" color="#006600">Homepage</a></font><i class="fas fa-home animated-home"></i></p>
 
       <form @submit.prevent="handleSubmit">
         <div class="form-group">
