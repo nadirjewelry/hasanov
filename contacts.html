@@ -322,6 +322,59 @@ a:link, a:visited, a:hover, a:active {
     color: #fff;
     box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
 }
+
+.image-container {
+    position: absolute; /* Allows for "floating" positioning */
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    /* Example positions (adjust for each image) */
+    top: 0px;
+    left: 222px;
+    transition: transform 0.5s ease-out, opacity 0.3s ease-in-out; /* Smooth transitions for movement and opacity */
+	z-index: 0;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    /* Ensure smooth transitions for image changes */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-container .img-hover {
+    /* Initially hide the hover image */
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.image-container:hover .img-default {
+    /* Hide default image on hover */
+    opacity: 0;
+}
+
+.image-container:hover .img-hover {
+    /* Show hover image on hover */
+    opacity: 1;
+}
+
+/* Movement Animation (Pure CSS) */
+/* This keyframes block creates a simple floating/bobbing animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-9px); } /* Adjust movement distance */
+    100% { transform: translateY(0px); }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite; /* Apply the floating animation */
+}
+
+/* Hover-triggered movement */
+.image-container:hover {
+    transform: scale(1.1) rotate(5deg); /* Example: Scale up and rotate slightly on hover */
+}
 </style>
 
   <script>
@@ -333,6 +386,12 @@ a:link, a:visited, a:hover, a:active {
 </head>
 
 <body translate="no">
+<div class="image-container">
+    <img class="img-default" src="/files/j9-1.png" alt="Default Image">
+    <img class="img-hover" src="/files/j9.png" alt="Hover Image">
+</div>
+<!-- Repeat for multiple floating images -->
+
   <div id="app"></div>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   
@@ -378,7 +437,20 @@ new Vue({
     </div>
   ` });
   </script>
+<script>
+// Example of adding the floating class to all containers on load
+document.addEventListener('DOMContentLoaded', () => {
+    const containers = document.querySelectorAll('.image-container');
+    containers.forEach(container => {
+        container.classList.add('floating');
+    });
+});
 
+// Example of a more complex movement animation using JavaScript (e.g., following the mouse, a physics-based float, etc.)
+// This can get complex quickly and might require a library. The pure CSS animation is usually sufficient for simple floating effects.
+
+
+	</script>
 </body>
 
 </html>
